@@ -1,0 +1,103 @@
+@use '../base/variables' as v ;
+@use '../base/mixins' as m ;
+
+.services {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  &__bgtop {
+    width: 100%;
+    min-height: 10rem;
+    background-image: url(../images/bg-section-top-mobile-1.svg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: bottom;
+    @include m.tablet { 
+      min-height: 30rem;
+      background-image: url(../images/bg-section-top-desktop-1.svg);
+    }
+    &-2{
+      width: 100%;
+      min-height: 10rem;
+      background-image: url(../images/bg-section-top-mobile-2.svg);
+      @include m.tablet {
+        min-height: 30rem; 
+        background-image: url(../images/bg-section-top-desktop-2.svg);
+      }
+    }
+  }
+
+  &__mainbg {
+    background-color: v.$paleBlue;
+    &:nth-child(1){
+      background: transparent;
+    }
+  }
+
+  &__content {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    @include m.tablet { 
+      flex-direction: row-reverse;
+      &-m{
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    @include m.tablet { 
+      align-items: flex-start;
+      text-align:left;
+    }
+  }
+
+  &__heading {
+    font-family: v.$secondaryFont;
+    font-weight: 700;
+    @include m.desktop { 
+      font-size: 4rem;
+    }
+  }
+
+  &__text {
+    @include m.desktop { 
+      max-width: 80%;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__bgbottom {
+    width: 100%;
+    min-height: 10rem;
+    background-image: url(../images/bg-section-bottom-mobile-1.svg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: top;
+    @include m.tablet { 
+      min-height: 20rem;
+      background-image: url(../images/bg-section-bottom-desktop-1.svg);
+    }
+    &-2{
+      width: 100%;
+      min-height: 10rem;
+      background-image: url(../images/bg-section-bottom-mobile-2.svg);
+      @include m.tablet {
+        min-height: 20rem; 
+        background-image: url(../images/bg-section-bottom-desktop-2.svg);
+      }
+    }
+  }
+}

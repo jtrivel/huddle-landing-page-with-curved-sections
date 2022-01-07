@@ -1,0 +1,207 @@
+@use '../base/variables' as v ;
+@use '../base/mixins' as m ;
+
+.footer {
+  padding-top: 10rem ;
+  color: v.$white;
+
+  &__topbg{
+    width: 100%;
+    min-height: 10rem;
+    background-image: url(../images/bg-footer-top-mobile.svg);
+    background-size: 100vw;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    @include m.tablet { 
+      background-image: url(../images/bg-footer-top-desktop.svg);
+
+      min-height: 30rem;
+    }
+  }
+
+  &__mainbg {
+    background-color: v.$darkCyan;
+  }
+
+  &__main {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include m.tablet { 
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include m.desktop { 
+      max-width: 40% ;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__subheading {
+    @include m.desktop { 
+      max-width: 70%;
+    }
+  }
+
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include m.desktop { 
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  &__camp {
+    width: 100%;
+    border-radius: .5rem;
+    padding: 1rem;
+    border: 1px solid v.$darkCyan;
+    outline: none;
+    transition: .5s;
+    &:focus {
+      border: 2px solid v.$white;
+    }
+  }
+
+  &__btn {
+    align-self: flex-end;
+    @include m.btn(v.$white,v.$pink,v.$pink);
+    border-radius: .5rem;
+    position: relative;
+    z-index: 1;
+    transition: all 250ms ease;
+    &:hover {
+      color: v.$pink;
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: v.$white;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      border-radius: .5rem;
+      transform: scaleY(0);
+      transition: all 250ms ease;
+    }
+
+    &:hover::before{
+      transform: scaleY(1);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    @include m.tablet { 
+      max-width: 40%;
+      height: 100%;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  &__desc {
+    @include m.tablet { 
+      max-width: 60%
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__socials {
+    margin-top: 4rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__social {
+    cursor: pointer;
+    transition: all .5s ease;
+    &:hover{
+      color: v.$pink;
+      transform: rotateY(90deg);
+    }
+  }
+
+  &__copyright {
+    padding-top: 5rem ;
+    text-align: center;
+    background-color: v.$darkCyan;
+    font-size: 1.2rem;
+  }
+
+  &__attribution {
+    padding-bottom: 1rem;
+    color: v.$white;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: v.$paleBlue;
+    position: relative;
+    transition: all 250ms ease;
+    &:hover {
+      color: v.$pink;
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: v.$pink;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin:left ;
+      transition: all 250ms ease;
+    }
+
+    &:hover::before{
+      transform: scaleX(1);
+    }
+  }
+
+}
