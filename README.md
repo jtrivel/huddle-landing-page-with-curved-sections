@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/huddle-landing-page-with-curved-sections-solution-with-flexbox-hNyGeigiJ)
-- Live Site URL: [Live Site URL](https://fylo-landing-page-with-two-columns-layout0001.netlify.app/)
+- Live Site URL: [Live Site URL](https://huddle-landing-page-with-curved-sections001.netlify.app/)
 
 ### Built with
 - Sass
